@@ -7,7 +7,7 @@ on:
     branches:
       - '*'
 env:
-  IMAGE_NAME: 'tflsec'
+  IMAGE_NAME: 'tfsec'
 
 name: 'ci'
 
@@ -62,7 +62,7 @@ jobs:
       - name: 'scanning'
         uses: 'aquasecurity/trivy-action@0.0.7'
         with:
-          image-ref: 'tflsec:latest'
+          image-ref: 'tfsec:latest'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: True
@@ -74,8 +74,8 @@ jobs:
         if: "github.event_name == 'push'"
         id: 'push-image'
         env:
-          SOURCE: 'tflsec:latest'
-          TARGET: 'docker.pkg.github.com/vglen/docker-tflsec/tflsec:latest'
+          SOURCE: 'tfsec:latest'
+          TARGET: 'docker.pkg.github.com/vglen/docker-tfsec/tfsec:latest'
         run: |
           docker tag ${SOURCE} ${TARGET}
           docker push ${TARGET}
