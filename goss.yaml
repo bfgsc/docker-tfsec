@@ -1,0 +1,18 @@
+---
+command:
+  alpine-version:
+    exit-status: 0
+    exec: 'cat /etc/alpine-release'
+    stdout:
+      - '3.12.1'
+    stderr: []
+    timeout: 5000
+    skip: False
+  tflint-version:
+    exit-status: 0
+    exec: "tfsec --version"
+    stdout:
+      - 'v0.34.0'
+    stderr: []
+    timeout: 5000
+    skip: False
