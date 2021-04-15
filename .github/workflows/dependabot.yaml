@@ -1,0 +1,17 @@
+---
+version: 2
+registries:
+  docker-registry-274118048627-dkr-ecr-us-west-2-amazonaws-com:
+    type: 'docker-registry'
+    url: "https://274118048627.dkr.ecr.us-west-2.amazonaws.com"
+    username: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+    password: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+updates:
+  - package-ecosystem: "docker"
+    directory: "/ci-base"
+    schedule:
+      interval: "daily"
+      time: "11:00"
+    open-pull-requests-limit: 10
+    registries:
+      - "docker-registry-274118048627-dkr-ecr-us-west-2-amazonaws-com"
