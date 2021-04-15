@@ -17,7 +17,7 @@ jobs:
     needs:
       - 'hadolint'
       - 'yamllint'
-    runs-on: 'ubuntu-latest'
+    runs-on: [self-hosted]
     steps:
       - name: 'setup-go'
         uses: 'actions/setup-go@v1'
@@ -82,14 +82,14 @@ jobs:
 
   hadolint:
     name: 'hadolint'
-    runs-on: 'ubuntu-latest'
+    runs-on: [self-hosted]
     steps:
       - uses: 'actions/checkout@v2'
       - uses: 'burdzwastaken/hadolint-action@master'
 
   yamllint:
     name: 'yamllint'
-    runs-on: 'ubuntu-latest'
+    runs-on: [self-hosted]
     steps:
       - uses: 'actions/checkout@v2'
       - uses: 'ibiqlik/action-yamllint@master'
