@@ -5,6 +5,7 @@ ignore: |
   deployments/archive/grafana.yaml
   deployments/archive/newrelic-infra.yaml
   deployments/archive/prometheus.yaml
+  ./.hadolint.yaml
 
 rules:
   comments:
